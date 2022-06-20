@@ -7,7 +7,7 @@ const QuestionCard: React.FC<{
   copyToClipboard: (question: PollQuestion) => void;
 }> = ({ question, copyToClipboard }) => {
   return (
-    <div key={question.id} className="card bg-base-100 shadow-xl">
+    <div key={question.id} className="card bg-gray-800 shadow-xl">
       <div className="card-body">
         <h1 key={question.id} className="card-title">
           {question.question}
@@ -17,7 +17,7 @@ const QuestionCard: React.FC<{
         </p>
         <div className="card-actions mt-5 items-center justify-between">
           <Link href={`/question/${question.id}`}>
-            <a className="">View</a>
+            <a>Lihat</a>
           </Link>
           <span
             className="cursor-pointer"

@@ -1,7 +1,8 @@
 import { PollQuestion, Prisma, Vote } from "@prisma/client";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
+
+import Navbar from "../../components/Navbar";
 import { trpc } from "../../utils/trpc";
 
 const QuestionsPageContent: React.FC<{ id: string }> = ({ id }) => {
@@ -41,18 +42,27 @@ const QuestionsPageContent: React.FC<{ id: string }> = ({ id }) => {
   return (
     <div className="p-6 min-h-screen w-screen container">
       <Head>
-        <title>Question | OnAVote</title>
+        <title>Pertanyaan - KotakSuara by Naufal Akbar Nugroho</title>
       </Head>
-      <header className="flex w-full justify-between mb-10 items-center">
+
+      <Navbar />
+
+      {/* <header className="flex w-full justify-between mb-10 items-center">
         <Link href={"/"}>
           <h1 className="text-4xl font-bold cursor-pointer">OnAVote</h1>
         </Link>
         {data?.isOwner && (
           <div className="bg-gray-700 rounded-md p-3">You made this!</div>
         )}
-      </header>
+      </header> */}
 
-      <main className="max-w-2xl mx-auto">
+      <main className="max-w-2xl mx-auto pt-24 pb-20">
+        <div className="flex mb-10">
+          {data?.isOwner && (
+            <div className="bg-sky-600 rounded-md p-3">Anda yang membuat ini!</div>
+          )}
+        </div>
+
         <h1 className="text-2xl font-bold mb-10 text-center">
           {data?.question?.question}
         </h1>

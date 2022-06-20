@@ -1,16 +1,14 @@
 import React from "react";
-import { trpc } from "../utils/trpc";
-
 import { useFieldArray, useForm } from "react-hook-form";
-
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/router";
+
 import {
   CreateQuestionInputType,
   createQuestionValidator,
 } from "../shared/create-question-validator";
-import { useRouter } from "next/router";
+import { trpc } from "../utils/trpc";
 import Head from "next/head";
-import Link from "next/link";
 import Navbar from "../components/Navbar";
 
 const CreateQuestionForm = () => {
@@ -52,7 +50,9 @@ const CreateQuestionForm = () => {
         <Head>
           <title>Buat Pertanyaan - KotakSuara by Naufal Akbar Nugroho</title>
         </Head>
+
         <Navbar />
+
         <div className="max-w-xl mx-auto py-12 md:max-w-2xl">
           <h2 className="text-2xl font-bold">Buat Voting Baru</h2>
 

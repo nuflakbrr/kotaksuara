@@ -1,7 +1,7 @@
 import { PollQuestion } from "@prisma/client";
 import Head from "next/head";
-import Link from "next/link";
 import React from "react";
+
 import Navbar from "../components/Navbar";
 import QuestionCard from "../components/QuestionCard";
 import { trpc } from "../utils/trpc";
@@ -32,25 +32,29 @@ export default function Home() {
       <Head>
         <title>Beranda - KotakSuara by Naufal Akbar Nugroho</title>
       </Head>
-      <Navbar />
-      <div className="grid grid-cols-1 gap-y-5 md:grid-cols-4 md:gap-x-5 mt-10">
-        {data?.map((question) => (
-          <QuestionCard
-            key={question.id}
-            question={question}
-            copyToClipboard={copyToClipboard}
-          />
-        ))}
-      </div>
 
-      {/* Toast that will show at the bottom-right of the screen */}
-      {showToast && (
-        <div className="absolute bottom-5 right-10 flex items-center justify-center bg-slate-50/10 p-3 rounded-md w-1/5">
-          <span className="text-xs font-semibold">
-            Link Copied to Clipboard!
-          </span>
+      <Navbar />
+
+      <div className="pt-10 pb-10">
+        <div className="grid grid-cols-1 gap-y-5 md:grid-cols-4 md:gap-x-5 mt-10">
+          {data?.map((question) => (
+            <QuestionCard
+              key={question.id}
+              question={question}
+              copyToClipboard={copyToClipboard}
+            />
+          ))}
         </div>
-      )}
+
+        {/* Toast that will show at the bottom-right of the screen */}
+        {showToast && (
+          <div className="absolute bottom-5 right-10 flex items-center justify-center bg-sky-600 p-3 rounded-md w-1/5">
+            <span className="text-xs font-semibold">
+              Link Copied to Clipboard!
+            </span>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
