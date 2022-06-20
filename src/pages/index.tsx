@@ -40,7 +40,7 @@ export default function Home() {
         </Link>
       </header>
       <div className="grid grid-cols-1 gap-y-5 md:grid-cols-4 md:gap-x-5 mt-10">
-        {data?.map((question) => (
+        {data?.map((question: any) => (
           <QuestionCard
             key={question.id}
             question={question}
