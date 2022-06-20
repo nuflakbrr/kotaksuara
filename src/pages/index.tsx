@@ -23,7 +23,7 @@ export default function Home() {
   if (isLoading)
     return (
       <div className="antialiased min-h-screen flex items-center justify-center">
-        <p className="text-white/40">Loading...</p>
+        <p className="text-white/40">Sedang Memuat...</p>
       </div>
     );
 
@@ -50,7 +50,7 @@ export default function Home() {
         {showToast && (
           <div className="absolute bottom-5 right-10 flex items-center justify-center bg-sky-600 p-3 rounded-md w-1/5">
             <span className="text-xs font-semibold">
-              Link Copied to Clipboard!
+              Tautan berhasil di salin!
             </span>
           </div>
         )}

@@ -22,7 +22,7 @@ const QuestionsPageContent: React.FC<{ id: string }> = ({ id }) => {
   );
 
   if (!data || !data?.question) {
-    return <div>Question not found</div>;
+    return <div>Pertanyaan tidak ditemukan</div>;
   }
 
   const getTotalVotes = (votes: any) => {
@@ -101,7 +101,7 @@ const QuestionPage = () => {
   const { id } = query;
 
   if (!id || typeof id !== "string") {
-    return <div>No ID</div>;
+    return <div>Tidak ada ID</div>;
   }
 
   return <QuestionsPageContent id={id} />;
