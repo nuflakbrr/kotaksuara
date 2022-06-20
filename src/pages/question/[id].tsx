@@ -70,7 +70,7 @@ const QuestionsPageContent: React.FC<{ id: string }> = ({ id }) => {
                     </p>
                   </div>
                   <progress
-                    className="progress progress-secondary w-full"
+                    className="progress progress-info w-full"
                     value={data?.votes?.[index]?._count ?? 0}
                     max={totalVotes}
                   ></progress>
