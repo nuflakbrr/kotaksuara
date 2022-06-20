@@ -4,6 +4,6 @@ import { createContext } from "../../../backend/router/context";
 
 // export API handler
 export default trpcNext.createNextApiHandler({
-    router: appRouter,
-    createContext: createContext,
+  router: appRouter,
+  createContext: createContext,
 });

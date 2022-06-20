@@ -7,8 +7,8 @@ import { questionRouter } from "./questions";
 import { createRouter } from "./context";
 
 export const appRouter = createRouter()
-    .transformer(superjson)
-    .merge("questions.", questionRouter);
+  .transformer(superjson)
+  .merge("questions.", questionRouter);
 
 // export type definition of API
 export type AppRouter = typeof appRouter;

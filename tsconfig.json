@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
 
-    // Fal's Additional Opinions
+    // Theo's Additional Opinions
     "incremental": false,
     "noUncheckedIndexedAccess": true
   },
