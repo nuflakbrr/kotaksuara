@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { useEffect } from 'react';
 import Link from 'next/link';
+
 import styles from './Navbar.module.css';
 
 const Navbar: NextPage = () => {
@@ -10,10 +11,12 @@ const Navbar: NextPage = () => {
             const header = document.querySelector('header');
             const fixNav = header?.offsetTop ?? 0;
 
+            const styling = styles.navbarFixed ?? '';
+
             if (window.pageYOffset > fixNav) {
-                header?.classList.add(styles.navbarFixed);
+                header?.classList.add(styling);
             } else {
-                header?.classList.remove(styles.navbarFixed);
+                header?.classList.remove(styling);
             }
         }
     }, []);
@@ -24,8 +27,10 @@ const Navbar: NextPage = () => {
         const hamburger = document.querySelector('#hamburger');
         const navMenu = document.querySelector('#navMenu');
 
+        const styling = styles.hamburgerActive ?? '';
+
         hamburger?.addEventListener('click', () => {
-            hamburger.classList.toggle(styles.hamburgerActive);
+            hamburger.classList.toggle(styling);
             navMenu?.classList.toggle('hidden');
         });
     };
