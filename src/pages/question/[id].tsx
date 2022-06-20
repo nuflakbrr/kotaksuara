@@ -47,15 +47,6 @@ const QuestionsPageContent: React.FC<{ id: string }> = ({ id }) => {
 
       <Navbar />
 
-      {/* <header className="flex w-full justify-between mb-10 items-center">
-        <Link href={"/"}>
-          <h1 className="text-4xl font-bold cursor-pointer">OnAVote</h1>
-        </Link>
-        {data?.isOwner && (
-          <div className="bg-gray-700 rounded-md p-3">You made this!</div>
-        )}
-      </header> */}
-
       <main className="max-w-2xl mx-auto pt-24 pb-20">
         <div className="flex mb-10">
           {data?.isOwner && (
@@ -93,7 +84,7 @@ const QuestionsPageContent: React.FC<{ id: string }> = ({ id }) => {
                   mutate({ questionId: data.question!.id, option: index })
                 }
                 key={index}
-                className="btn btn-outline"
+                className="btn bg-sky-500 hover:bg-sky-600 text-white"
               >
                 {(option as any).text}
               </button>
